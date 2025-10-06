@@ -9,7 +9,7 @@ import { ViewTransitions } from 'next-view-transitions';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Prakash - Code, Learn, Document, Repeat',
+  title: 'Prakash - Documenting My Growth Journey',
   description:
     'Documenting my daily journey, technical learnings, and staying consistent with my work',
 };
