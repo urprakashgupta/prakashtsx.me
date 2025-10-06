@@ -119,7 +119,7 @@ export default function AboutPage() {
           {/* What You'll Find */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-black dark:text-white flex items-center gap-2">
-              <span>🌟</span> What You'll Find Here
+              <span>🌟</span> What You&apos;ll Find Here
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg p-5">
