@@ -28,11 +28,11 @@ export default function AboutPage() {
           {/* Introduction */}
           <section className="mb-12">
             <h2 className="text-3xl font-bold mb-4 text-black dark:text-white">
-              Hi, I'm Prakash!
+              Hi, I&apos;m Prakash!
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              I'm a developer on a continuous learning journey, documenting my
-              experiences, thoughts, and technical discoveries along the way.
+              I&apos;m a developer on a continuous learning journey, documenting
+              my experiences, thoughts, and technical discoveries along the way.
               This space is my digital garden where I nurture ideas and track my
               growth.
             </p>
@@ -49,8 +49,8 @@ export default function AboutPage() {
               <span>💻</span> What I Do
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              I'm passionate about building web applications and exploring new
-              technologies. My journey involves:
+              I&apos;m passionate about building web applications and exploring
+              new technologies. My journey involves:
             </p>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
               <li className="flex items-start gap-2">
@@ -101,7 +101,7 @@ export default function AboutPage() {
                   Sharing Knowledge
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  If my experiences help even one person, it's worth it
+                  If my experiences help even one person, it&apos;s worth it
                 </p>
               </div>
               <div className="pl-4 border-l-4 border-green-600 dark:border-green-400">
@@ -127,8 +127,8 @@ export default function AboutPage() {
                   Daily Diary
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  My day-to-day experiences, what I'm learning, challenges I'm
-                  facing, and small wins worth celebrating
+                  My day-to-day experiences, what I&apos;m learning, challenges
+                  I&apos;m facing, and small wins worth celebrating
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg p-5">
@@ -136,8 +136,8 @@ export default function AboutPage() {
                   Tech Blogs
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  In-depth articles about technologies I'm exploring, tutorials,
-                  and technical insights from my projects
+                  In-depth articles about technologies I&apos;m exploring,
+                  tutorials, and technical insights from my projects
                 </p>
               </div>
             </div>
@@ -146,7 +146,8 @@ export default function AboutPage() {
           {/* Closing */}
           <section className="text-center py-8">
             <p className="text-gray-600 dark:text-gray-400 italic">
-              "The journey of a thousand miles begins with a single step."
+              &quot;The journey of a thousand miles begins with a single
+              step.&quot;
             </p>
             <p className="text-gray-500 dark:text-gray-500 mt-2 text-sm">
               Thanks for being part of my journey! 🌱
