@@ -9,9 +9,56 @@ import { ViewTransitions } from 'next-view-transitions';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prakashtsx.me'),
   title: 'Prakash - Documenting My Growth Journey',
   description:
-    'Documenting my daily journey, technical learnings, and staying consistent with my work',
+    'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+  keywords: [
+    'developer blog',
+    'coding journey',
+    'tech blog',
+    'daily diary',
+    'software engineering',
+    'web development',
+    'Prakash',
+    'learning in public',
+    'prakash.tsx',
+    'prakashtsx',
+    'urprakashgupta',
+    'prakashtsx.me',
+  ],
+  authors: [{ name: 'Prakash', url: 'https://prakashtsx.me' }],
+  creator: 'Prakash',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://prakashtsx.me',
+    siteName: 'Prakash - Developer Journey',
+    title: 'Prakash - Documenting My Growth Journey',
+    description:
+      'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Prakash - Documenting My Growth Journey',
+    description:
+      'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+    creator: '@prakash_tsx',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add this from Google Search Console
+  },
 };
 
 export default function RootLayout({

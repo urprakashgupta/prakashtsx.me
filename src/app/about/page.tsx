@@ -4,7 +4,20 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About Me',
   description:
-    'Learn more about my journey, what I do, and why I document my experiences',
+    'Learn about Prakash, a developer documenting his journey, building projects, and sharing technical learnings. Discover what drives me and what you&apos;ll find here.',
+  openGraph: {
+    title: 'About Prakash - Developer Journey',
+    description:
+      'Learn about my journey as a developer, what I build, and why I document everything I learn.',
+    url: 'https://prakashtsx.me/about',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'About Prakash - Developer Journey',
+    description:
+      'Learn about my journey as a developer, what I build, and why I document everything I learn.',
+  },
 };
 
 export default function AboutPage() {

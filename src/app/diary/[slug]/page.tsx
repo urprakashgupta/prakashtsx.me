@@ -69,9 +69,28 @@ export async function generateMetadata(props: PageProps) {
     return notFound();
   }
 
+  const title = entry.title || `Diary - ${entry.date}`;
+  const description = `Daily diary entry from ${beautifyDate(
+    entry.date
+  )}. Documenting my journey as a developer, challenges faced, and lessons learned.`;
+
   return {
-    title: entry.title || `Diary - ${entry.date}`,
-    description: `Daily diary entry from ${entry.date}`,
+    title: title,
+    description: description,
+    authors: [{ name: 'Prakash' }],
+    openGraph: {
+      title: title,
+      description: description,
+      url: `https://prakashtsx.me/diary/${params.slug}`,
+      type: 'article',
+      publishedTime: entry.date,
+      authors: ['Prakash'],
+    },
+    twitter: {
+      card: 'summary',
+      title: title,
+      description: description,
+    },
   };
 }
 
