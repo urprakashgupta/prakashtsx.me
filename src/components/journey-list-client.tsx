@@ -2,17 +2,17 @@
 import { useState } from 'react';
 import { Link } from 'next-view-transitions';
 import BookIcon from './icons/book-icon';
-import type { DiaryEntry } from '@/utils/get-diary-entries';
+import type { JourneyEntry } from '@/utils/get-journey-entries';
 
-interface DiaryListClientProps {
-  entries: DiaryEntry[];
+interface JourneyListClientProps {
+  entries: JourneyEntry[];
   itemsPerPage?: number;
 }
 
-export function DiaryListClient({
+export function JourneyListClient({
   entries,
   itemsPerPage = 5,
-}: DiaryListClientProps) {
+}: JourneyListClientProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(entries.length / itemsPerPage);
@@ -41,7 +41,7 @@ export function DiaryListClient({
         {currentEntries.map((entry) => (
           <Link
             key={entry.slug}
-            href={`/diary/${entry.slug}`}
+            href={`/journey/${entry.slug}`}
             className="group dark:hover:bg-zinc-800/70 dark:border-zinc-800 border-2 border-zinc-100 hover:border-zinc-200 dark:hover:border-zinc-700 rounded-md py-3 w-full hover:bg-gray-50 transition-all duration-200 flex flex-col px-3"
           >
             <div className="flex flex-row items-center gap-2">

@@ -1,11 +1,11 @@
-import { MetadataRoute } from 'next';
+﻿import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/utils/get-blog-posts';
-import { getAllDiaryEntries } from '@/utils/get-diary-entries';
+import { getAllJourneyEntries } from '@/utils/get-journey-entries';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://prakashtsx.me';
 
-  // Get all blog posts
+  // Automatically get all blog posts
   const blogs = getAllBlogPosts().map((post) => ({
     url: `${baseUrl}/${post.slug}`,
     lastModified: new Date(post.date),
@@ -13,15 +13,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Get all diary entries
-  const diaryEntries = getAllDiaryEntries().map((entry) => ({
-    url: `${baseUrl}/diary/${entry.slug}`,
+  // Automatically get all journey entries
+  const journeyEntries = getAllJourneyEntries().map((entry) => ({
+    url: `${baseUrl}/journey/${entry.slug}`,
     lastModified: new Date(entry.date),
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
 
-  // Static pages
+  // Static pages (never change)
   const staticPages = [
     {
       url: baseUrl,
@@ -30,18 +30,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blogs`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/journey`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
     },
   ];
 
-  return [...staticPages, ...blogs, ...diaryEntries];
+  // Combine everything automatically
+  return [...staticPages, ...blogs, ...journeyEntries];
 }

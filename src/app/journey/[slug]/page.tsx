@@ -14,23 +14,27 @@ interface PageProps {
   }>;
 }
 
-const diarySchema = z.object({
+const journeySchema = z.object({
   date: z.string(),
   title: z.string().optional(),
   mood: z.string().optional(),
 });
 
-async function getDiaryEntry(slug: string) {
+async function getJourneyEntry(slug: string) {
   try {
     const filePath = path.join(
       process.cwd(),
-      'src/content/diary',
+      'src/content/journey',
       `${slug}.md`
     );
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
 
-    const { success, data: validatedData, error } = diarySchema.safeParse(data);
+    const {
+      success,
+      data: validatedData,
+      error,
+    } = journeySchema.safeParse(data);
 
     if (!success) {
       console.error(data);
@@ -45,10 +49,10 @@ async function getDiaryEntry(slug: string) {
 }
 
 export async function generateStaticParams() {
-  const diaryDir = path.join(process.cwd(), 'src/content/diary');
+  const journeyDir = path.join(process.cwd(), 'src/content/journey');
 
   try {
-    const files = fs.readdirSync(diaryDir);
+    const files = fs.readdirSync(journeyDir);
 
     return files
       .filter((file) => file.endsWith('.md'))
@@ -63,16 +67,16 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
-  const entry = await getDiaryEntry(params.slug);
+  const entry = await getJourneyEntry(params.slug);
 
   if (!entry) {
     return notFound();
   }
 
-  const title = entry.title || `Diary - ${entry.date}`;
-  const description = `Daily diary entry from ${beautifyDate(
+  const title = entry.title || `Learning Journey - ${entry.date}`;
+  const description = `Learning journey entry from ${beautifyDate(
     entry.date
-  )}. Documenting my journey as a developer, challenges faced, and lessons learned.`;
+  )}. Documenting my growth as a developer, challenges faced, and lessons learned.`;
 
   return {
     title: title,
@@ -81,7 +85,7 @@ export async function generateMetadata(props: PageProps) {
     openGraph: {
       title: title,
       description: description,
-      url: `https://prakashtsx.me/diary/${params.slug}`,
+      url: `https://prakashtsx.me/journey/${params.slug}`,
       type: 'article',
       publishedTime: entry.date,
       authors: ['Prakash'],
@@ -94,15 +98,15 @@ export async function generateMetadata(props: PageProps) {
   };
 }
 
-export default async function DiaryEntryPage(props: PageProps) {
+export default async function JourneyEntryPage(props: PageProps) {
   const params = await props.params;
-  const entry = await getDiaryEntry(params.slug);
+  const entry = await getJourneyEntry(params.slug);
 
   if (!entry) {
     return notFound();
   }
 
-  const title = entry.title || 'Daily Diary Entry';
+  const title = entry.title || 'Learning Journey Entry';
   const date = beautifyDate(entry.date);
 
   return (

@@ -1,5 +1,5 @@
 import BlogSection from '@/components/blog-section';
-import DailyDiary from '@/components/daily-diary';
+import LearningJourney from '@/components/learning-journey';
 import GetInTouch from '@/components/get-in-touch';
 import Introduction from '@/components/introduction';
 import ProofOfWork from '@/components/proof-of-work';
@@ -38,7 +38,7 @@ export default function Home() {
       {/* Proof of work Section */}
       <ProofOfWork />
       {/* Daily Diary Section */}
-      <DailyDiary />
+      <LearningJourney />
       {/* Blogs Section */}
       <BlogSection />
       {/* Footer Section */}

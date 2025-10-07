@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { z } from 'zod';
 
-export interface DiaryEntry {
+export interface JourneyEntry {
   slug: string;
   date: string;
   title?: string;
@@ -11,34 +11,34 @@ export interface DiaryEntry {
   content: string;
 }
 
-export const diarySchema = z.object({
+export const journeySchema = z.object({
   date: z.string(),
   title: z.string().optional(),
   mood: z.string().optional(),
 });
 
 /**
- * Get all diary entries from diary directory
+ * Get all journey entries from journey directory
  */
-export function getAllDiaryEntries(): DiaryEntry[] {
+export function getAllJourneyEntries(): JourneyEntry[] {
   try {
-    const diaryDir = path.join(process.cwd(), 'src/content/diary');
+    const journeyDir = path.join(process.cwd(), 'src/content/journey');
 
     // Check if directory exists
-    if (!fs.existsSync(diaryDir)) {
+    if (!fs.existsSync(journeyDir)) {
       return [];
     }
 
-    const files = fs.readdirSync(diaryDir);
+    const files = fs.readdirSync(journeyDir);
 
     const entries = files
       .filter((file) => file.endsWith('.md'))
       .map((file) => {
-        const filePath = path.join(diaryDir, file);
+        const filePath = path.join(journeyDir, file);
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const { data, content } = matter(fileContent);
 
-        const { success, data: validatedData } = diarySchema.safeParse(data);
+        const { success, data: validatedData } = journeySchema.safeParse(data);
 
         if (!success) {
           console.error(`Invalid frontmatter in ${file}`);
@@ -51,26 +51,26 @@ export function getAllDiaryEntries(): DiaryEntry[] {
           content,
         };
       })
-      .filter(Boolean) as DiaryEntry[];
+      .filter(Boolean) as JourneyEntry[];
 
     // Sort by date, newest first
     return entries.sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
   } catch (error) {
-    console.error('Error getting diary entries:', error);
+    console.error('Error getting journey entries:', error);
     return [];
   }
 }
 
 /**
- * Get paginated diary entries
+ * Get paginated journey entries
  */
-export function getPaginatedDiaryEntries(
+export function getPaginatedJourneyEntries(
   page: number = 1,
   perPage: number = 5
 ) {
-  const allEntries = getAllDiaryEntries();
+  const allEntries = getAllJourneyEntries();
   const totalPages = Math.ceil(allEntries.length / perPage);
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;

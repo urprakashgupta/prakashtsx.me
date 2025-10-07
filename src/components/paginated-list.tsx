@@ -25,20 +25,18 @@ export function PaginatedList<T extends { slug: string }>({
   const handleNextPage = () => {
     if (hasNext) {
       setCurrentPage(currentPage + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handlePrevPage = () => {
     if (hasPrev) {
       setCurrentPage(currentPage - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   return (
     <>
-      <div className="flex flex-col w-full gap-y-2">
+      <div className="flex flex-col w-full gap-y-3">
         {currentItems.map((item) => (
           <div key={item.slug}>{renderItem(item)}</div>
         ))}
@@ -60,7 +58,7 @@ export function PaginatedList<T extends { slug: string }>({
           </button>
 
           <span className="text-sm text-gray-600 dark:text-gray-400">
-            Page {currentPage} of {totalPages}
+            Page {currentPage} of {totalPages} ({items.length} total)
           </span>
 
           <button

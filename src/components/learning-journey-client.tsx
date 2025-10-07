@@ -1,12 +1,12 @@
 'use client';
 import { useState, useMemo } from 'react';
-import type { DiaryEntry } from '@/utils/get-diary-entries';
+import type { JourneyEntry } from '@/utils/get-journey-entries';
 import { beautifyDate } from '@/utils/beautify-date';
 
 const ENTRIES_PER_PAGE = 5;
 
-// DiaryCard component to display individual diary entry
-function DiaryCard({ entry }: { entry: DiaryEntry }) {
+// JourneyCard component to display individual journey entry
+function JourneyCard({ entry }: { entry: JourneyEntry }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -51,11 +51,11 @@ function DiaryCard({ entry }: { entry: DiaryEntry }) {
   );
 }
 
-interface DailyDiaryClientProps {
-  allEntries: DiaryEntry[];
+interface LearningJourneyClientProps {
+  allEntries: JourneyEntry[];
 }
 
-function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
+function LearningJourneyClient({ allEntries }: LearningJourneyClientProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Client-side pagination
@@ -63,7 +63,7 @@ function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
     const totalPages = Math.ceil(allEntries.length / ENTRIES_PER_PAGE);
     const startIndex = (currentPage - 1) * ENTRIES_PER_PAGE;
     const endIndex = startIndex + ENTRIES_PER_PAGE;
-    
+
     return {
       entries: allEntries.slice(startIndex, endIndex),
       totalPages,
@@ -90,10 +90,10 @@ function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
     <section className="flex flex-col gap-y-4 text-black dark:text-white w-full">
       <div className="mb-2">
         <h2 className="font-bold text-2xl md:text-4xl tracking-tight">
-          Daily Diary
+          Learning Journey
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-1">
-          My daily journey - what I did, learned, and experienced each day
+          My learning journey - what I did, learned, and experienced each day
         </p>
       </div>
 
@@ -101,7 +101,7 @@ function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
         <>
           <div className="flex flex-col w-full gap-y-3">
             {paginatedData.entries.map((entry) => (
-              <DiaryCard key={entry.slug} entry={entry} />
+              <JourneyCard key={entry.slug} entry={entry} />
             ))}
           </div>
 
@@ -121,7 +121,8 @@ function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
               </button>
 
               <span className="text-sm text-gray-600 dark:text-gray-400">
-                Page {paginatedData.currentPage} of {paginatedData.totalPages} ({paginatedData.totalEntries} entries)
+                Page {paginatedData.currentPage} of {paginatedData.totalPages} (
+                {paginatedData.totalEntries} entries)
               </span>
 
               <button
@@ -140,11 +141,11 @@ function DailyDiaryClient({ allEntries }: DailyDiaryClientProps) {
         </>
       ) : (
         <div className="text-gray-600 dark:text-gray-400 border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-md p-6 text-center">
-          No diary entries yet. Start writing your daily journey!
+          No journey entries yet. Start writing your learning journey!
         </div>
       )}
     </section>
   );
 }
 
-export default DailyDiaryClient;
+export default LearningJourneyClient;
