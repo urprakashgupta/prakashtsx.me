@@ -25,7 +25,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     icon: <Mail className="w-5 h-5" />,
-    href: 'mailto:urprakashgupta@gmail.com',
+    href: 'mailto:prakashtsx@gmail.com',
     label: 'Email',
   },
   {
@@ -35,7 +35,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     icon: <Twitter className="w-5 h-5" />,
-    href: 'https://twitter.com/urprakashgupta',
+    href: 'https://twitter.com/prakash_tsx',
     label: 'Twitter',
   },
 ];
