@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
     images: [
       {
-        url: '/og-image/og_image.png',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Prakash - Developer Journey',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description:
       'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
     creator: '@prakash_tsx',
-    images: ['/og-image/og_image.png'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
