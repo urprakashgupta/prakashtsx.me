@@ -12,12 +12,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://prakashtsx.me'),
   title: 'Prakash - Documenting My Growth Journey',
   description:
-    'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+    'Documenting my journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
   keywords: [
     'developer blog',
     'coding journey',
     'tech blog',
-    'daily diary',
+    'prakash tsx',
+    'prakash cv',
+    'prakashtsx cv',
     'software engineering',
     'web development',
     'Prakash',
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Prakash - Developer Journey',
     title: 'Prakash - Documenting My Growth Journey',
     description:
-      'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+      'Documenting my journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
     images: [
       {
         url: '/og-image.png',
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Prakash - Documenting My Growth Journey',
     description:
-      'Documenting my daily journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
+      'Documenting my journey as a developer, sharing technical learnings, building projects, and staying consistent with my growth.',
     creator: '@prakash_tsx',
     images: ['/og-image.png'],
   },

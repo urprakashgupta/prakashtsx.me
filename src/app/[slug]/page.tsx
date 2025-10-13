@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 import { BlogNavigation } from '@/components/blog-navigation';
+import { ShareButtons } from '@/components/share-buttons';
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
@@ -122,10 +123,19 @@ export default async function BlogPost(props: PageProps) {
   return (
     <main className="container mx-auto px-4 py-8">
       <BlogNavigation />
-      <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
-        {title}
-      </h1>
-      <p className="text-gray-500 dark:text-gray-400 mb-4">{date}</p>
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+        <div>
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
+            {title}
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400">{date}</p>
+        </div>
+        <ShareButtons
+          title={title}
+          url={`/${params.slug}`}
+          description={post.description}
+        />
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <MarkdownRenderer content={post.content} />
       </Suspense>

@@ -1,6 +1,6 @@
 # 🌱 My Personal Journey
 
-# prakashtsx.me
+# Website: https://prakashtsx.me
 
 > My small home on the internet - where I document my daily experiences and share technical insights.
 

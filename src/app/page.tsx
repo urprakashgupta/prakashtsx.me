@@ -37,7 +37,7 @@ export default function Home() {
       <Introduction />
       {/* Proof of work Section */}
       <ProofOfWork />
-      {/* Daily Diary Section */}
+      {/* Learning Journey Section */}
       <LearningJourney />
       {/* Blogs Section */}
       <BlogSection />

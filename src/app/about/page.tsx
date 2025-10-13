@@ -137,11 +137,11 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg p-5">
                 <h3 className="font-bold text-lg mb-2 text-black dark:text-white">
-                  Daily Diary
+                  Learning Journey
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  My day-to-day experiences, what I&apos;m learning, challenges
-                  I&apos;m facing, and small wins worth celebrating
+                  My experiences, what I&apos;m learning, challenges I&apos;m
+                  facing, and small wins worth celebrating
                 </p>
               </div>
               <div className="bg-white dark:bg-zinc-900 border-2 border-zinc-200 dark:border-zinc-800 rounded-lg p-5">

@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { MarkdownRenderer } from '@/components/markdown-renderer';
 import { BlogNavigation } from '@/components/blog-navigation';
+import { ShareButtons } from '@/components/share-buttons';
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
@@ -112,17 +113,26 @@ export default async function JourneyEntryPage(props: PageProps) {
   return (
     <main className="container mx-auto px-4 py-8">
       <BlogNavigation />
-      <div className="flex items-center gap-3 mb-2">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight text-black dark:text-white">
-          {title}
-        </h1>
-        {entry.mood && (
-          <span className="text-4xl" title={`Mood: ${entry.mood}`}>
-            {entry.mood}
-          </span>
-        )}
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+        <div>
+          <div className="flex items-center gap-3 mb-2">
+            <h1 className="font-bold text-3xl md:text-5xl tracking-tight text-black dark:text-white">
+              {title}
+            </h1>
+            {entry.mood && (
+              <span className="text-4xl" title={`Mood: ${entry.mood}`}>
+                {entry.mood}
+              </span>
+            )}
+          </div>
+          <p className="text-gray-500 dark:text-gray-400">{date}</p>
+        </div>
+        <ShareButtons
+          title={title}
+          url={`/journey/${params.slug}`}
+          description={`My learning journey entry from ${date}`}
+        />
       </div>
-      <p className="text-gray-500 dark:text-gray-400 mb-4">{date}</p>
       <Suspense fallback={<div>Loading...</div>}>
         <MarkdownRenderer content={entry.content} />
       </Suspense>

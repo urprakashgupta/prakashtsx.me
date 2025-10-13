@@ -93,7 +93,7 @@ function LearningJourneyClient({ allEntries }: LearningJourneyClientProps) {
           Learning Journey
         </h2>
         <p className="text-gray-600 dark:text-gray-400 mt-1">
-          My learning journey - what I did, learned, and experienced each day
+          Sharing what I learn, the problems I face, and how I solve them
         </p>
       </div>
 
