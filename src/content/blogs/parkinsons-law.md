@@ -49,7 +49,7 @@ Here are a few small things that help me apply it in my learning journey:
    If something feels like a 4-hour task, I give myself 2. That time pressure makes me focus better.
 
 2. **Use a timer.**  
-   Pomodoro sessions (25 minutes of work, 5 minutes of rest) help me stay consistent.
+   Using Timer apps or even just a simple stopwatch helps me stay on track and avoid distractions.
 
 3. **Don’t chase perfection at first.**  
    Get it working, then refine it later. Perfect code is useless if it’s never finished.
