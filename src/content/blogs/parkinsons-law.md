@@ -3,8 +3,6 @@ title: 'Parkinson’s Law: How I Realized More Time Doesn’t Always Mean More W
 date: '2025-10-15'
 ---
 
-# Parkinson’s Law: How I Realized More Time Doesn’t Always Mean More Work
-
 I’ve been learning full-stack development for a while now.  
 Between tutorials, projects, and those never-ending debugging sessions, I started noticing something interesting — no matter how much time I give myself for a task, it somehow _always_ takes exactly that long.
 
