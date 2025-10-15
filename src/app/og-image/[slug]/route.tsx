@@ -59,7 +59,7 @@ export async function GET(
               color: '#94a3b8',
             }}
           >
-            sarg.am
+            prakashtsx.me
           </p>
         </section>
       )
